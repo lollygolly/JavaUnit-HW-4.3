@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 class OrderCardTest {
     @Test
-    void shouldOrderCard() {
+    void shouldOrderCard() { // Проверка формы обратной связи при правильной валидации полей
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Иванов Иван");
@@ -21,7 +21,7 @@ class OrderCardTest {
     }
 
     @Test
-    void shouldNotOrderCardWhenNameInvalid() {
+    void shouldNotOrderCardWhenNameInvalid() { // Неправильно заполнено имя
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Ivan Ivanov");
@@ -33,7 +33,7 @@ class OrderCardTest {
     }
 
     @Test
-    void shouldNotOrderCardWhenNameIsEmpty() {
+    void shouldNotOrderCardWhenNameIsEmpty() { // Не заполнено имя
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("");
@@ -45,7 +45,7 @@ class OrderCardTest {
     }
 
     @Test
-    void shouldNotOrderCardWhenPhoneIsInvalid() {
+    void shouldNotOrderCardWhenPhoneIsInvalid() { // Неправильно заполнен номер телефона
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Иван Иванов");
@@ -57,7 +57,7 @@ class OrderCardTest {
     }
 
     @Test
-    void shouldNotOrderCardWhenPhoneIsEmpty() {
+    void shouldNotOrderCardWhenPhoneIsEmpty() { // Не заполнен номер телефона
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Иван Иванов");
@@ -69,7 +69,7 @@ class OrderCardTest {
     }
 
     @Test
-    void shouldNotOrderCardWhenCheckboxIsEmpty() {
+    void shouldNotOrderCardWhenCheckboxIsEmpty() { // Не стоит галочка на соглашении с условиями
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Иван Иванов");
